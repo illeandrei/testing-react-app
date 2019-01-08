@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as actions from 'actions';
 
 class CommentList extends Component {
+  // componentWillMount() {
+  //   this.props.fetchComments();
+  // }
+
   renderComments() {
     return this.props.comments.map(c => <li key={c}>{c}</li>);
   }
@@ -17,4 +22,4 @@ class CommentList extends Component {
 
 export default connect(({ comments }) => ({
   comments
-}))(CommentList);
+}), actions)(CommentList);
